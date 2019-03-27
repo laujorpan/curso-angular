@@ -4,6 +4,7 @@
   <app-avatar (buttonClicked)= "setTitle($event)" username=jnroji></app-avatar>
 
   <app-message (messageSent)="printInBoard($event)"></app-message>
+  <app-board message ="{{ lastMsg }}"></app-board>
 </div>
 
 
