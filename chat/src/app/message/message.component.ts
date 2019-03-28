@@ -8,13 +8,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class MessageComponent implements OnInit {
 
   @Output() messageSent = new EventEmitter();
-
+  textWrote:string;
   constructor() { }
 
   ngOnInit() {
   }
 
-  sendMessage(messageText){
-    this.messageSent.emit(messageText);
+  sendMessage(){
+    this.messageSent.emit(this.textWrote);
+    this.textWrote='';
+  }
+  isDisabled(){
+    return !this.textWrote || this.textWrote==='';
   }
 }

@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chat';
-  lastMsg:string;
+  messagesList:string[]=[];
+  users:string[]=["jnroji","rojorubi"];
+  
   setTitle(event){
-    this.title=event;
+    this.title = event;
   }
   printInBoard(message){
-    this.lastMsg=message
+    console.log(message)
+    this.messagesList.push(message)
+
   }
 }

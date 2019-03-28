@@ -1,2 +1,2 @@
-<input type="text" #inputMessage/>
-<button (click)="sendMessage(inputMessage.value)"> Send message </button>
+<input type="text" #inputMessage [(ngModel)]="textWrote" required/>
+<button (click)="sendMessage()" [disabled]="isDisabled()"> Send message </button>

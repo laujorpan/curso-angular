@@ -15,3 +15,10 @@ Además de jugar con obtener la imagen de una url, definir estilos, etc hemos vi
         2.2.3 El $event es lo quee yo he emitido al hacer "emit" en mi componente.
 ##### TIPS: mgchev // seeds angular// ...
 ##### RESOURCES: https://github.com/jroji/angular-chat
+
+## Clase 3:
+Inyectables y servicios. 
+Solo inyectar servicios en "componentes listos" dado que si no hacemos a los componentes de presentación muy dependientes de los datos que se les pasan por servicios y por tanto los hacemos poco reutilizables. En definitiva, los input/output nos deberían servir para comunicar hermanos haciendo el componente padre de pasarela y ese componente padre ha podido obtener la info que pasa por input o guardar la que recibe con output usando servicios.
+Inicio con observables.
+Importante: implementar onDestroy y desuscribir SI CREAMOS OBSERVABLES PROPIOS. Los de angular (ejemplo los del HttpClient angular sí los desuscribe)
+##### RESOURCES: https://www.learnrxjs.io

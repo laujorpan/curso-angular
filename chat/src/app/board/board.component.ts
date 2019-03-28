@@ -7,18 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  messages:Array<string> =new Array();;
+  @Input() messages:string[];
 
   constructor() { }
 
   ngOnInit() {
   }
  
-  @Input() 
-  set message (message:string){
-    if (message){
-      this.messages.push(message);
-
-    }
-  }
+  
 }
