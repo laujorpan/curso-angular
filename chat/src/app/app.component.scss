@@ -3,7 +3,7 @@ img.hover{
 }
 .grid{
     display : grid;
-    height: 100%;
+    height: 100vh;
     grid-template-columns:200px 1fr;
     grid-template-rows: 74px 1fr ;
     text-align:center;
