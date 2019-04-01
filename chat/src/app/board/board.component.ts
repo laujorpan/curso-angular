@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-board',
@@ -6,12 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
+  /* Option 1: With inputs and outputs */
+  /* @Input() messages:string[]; */
 
-  @Input() messages:string[];
-
-  constructor() { }
+  /* Option 2: With services */
+  messages = [];
+  constructor(private messageSrv: MessageService) { }
 
   ngOnInit() {
+    this.messageSrv.messages$.subscribe(data => {
+      this.messages.push(data)
+    });
   }
  
   

@@ -1,17 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="grid">
   <div class="grid-elem-1">
-  <app-avatar (buttonClicked)= "setTitle($event)"></app-avatar>
+    <app-avatar (buttonClicked)= "setTitle($event)"></app-avatar>
   </div>
   <div class="grid-elem-2">
-  
-  <app-avatar *ngFor="let username of users" (buttonClicked)= "setTitle($event)" username="{{username}}"></app-avatar>
+    <app-avatar *ngFor="let username of users" (buttonClicked)= "setTitle($event)" username="{{username}}"></app-avatar>
   </div>
   <div class="grid-elem-3">
-  <app-board [messages] = "messagesList"></app-board>
-  <!--Otra opcion: <app-board [message] ="lastMsg"></app-board>-->
-  <app-message (messageSent)="printInBoard($event)"></app-message>
-
+    <!-- Option 1 - With inputs and outputs -->
+    <!--<app-board [messages] = "messagesList"></app-board>-->
+    <!--Otra opcion: <app-board [message] ="lastMsg"></app-board>-->
+    <!-- Option 2 - With services -->
+    <app-board></app-board>
+  </div>
+  <div class="grid-elem-4">
+    <app-message (messageSent)="printInBoard($event)"></app-message>
   </div>
 </div>
 
