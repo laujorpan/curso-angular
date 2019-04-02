@@ -31,8 +31,7 @@ export class AppComponent implements OnInit{
   }
 
   selectUser(user:object){
-    console.log(user);
     this.activeUser=user;
-    console.log(this.activeUser);
+    console.log("Active user:"+this.activeUser);
   }
 }
