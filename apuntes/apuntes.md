@@ -22,3 +22,9 @@ Solo inyectar servicios en "componentes listos" dado que si no hacemos a los com
 Inicio con observables.
 Importante: implementar onDestroy y desuscribir SI CREAMOS OBSERVABLES PROPIOS. Los de angular (ejemplo los del HttpClient angular sí los desuscribe)
 ##### RESOURCES: https://www.learnrxjs.io
+
+## Clase 4:
+rangle.io --> creadores iniciales de augury
+augury: extension de chrome que permite ver el arbol de dependencias, atributos, etc
+Router:
+Cuidado con el orden en el que definimos las rutas ya que el primero que machea es el que pinta

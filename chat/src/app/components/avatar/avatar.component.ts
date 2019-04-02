@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class AvatarComponent implements OnInit {
 
   @Input('username') name:string = 'laujorpan';
+  @Input('userimage') image:string = `https://twivatar.glitch.me/${this.name}`
   @Output() buttonClicked = new EventEmitter();
 
   constructor() {
@@ -19,7 +20,8 @@ export class AvatarComponent implements OnInit {
   }
 
   findTwitterImg(){
-    return `https://twivatar.glitch.me/${this.name}`;
+    return this.image;
+    //return `https://twivatar.glitch.me/${this.name}`;
   }
 
   // handleClick(){
