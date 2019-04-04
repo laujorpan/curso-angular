@@ -1,3 +1,8 @@
+.grid{
+    display: grid;
+    grid-template-rows: 74px 1fr;
+    grid-template-columns: 95% 1fr;
+}
 p{
     text-align: left;
     padding: 12px;

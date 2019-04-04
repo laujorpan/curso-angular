@@ -7,12 +7,10 @@ import { Subject } from 'rxjs';
 export class MessageService {
   messages = [];
   messages$ = new Subject();
-  
   constructor() { }
 
   addMessage(message) {
     this.messages = [ message ];
     this.messages$.next(message);
   }
-  
 }

@@ -7,31 +7,35 @@ import { UserService } from './services/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'chat';
-  messagesList:string[]=[];
+  messagesList: string[] = [];
   // users:string[]=["jnroji","rojorubi"]; Firs version with two known users
-  users:Observable<object>;
-  activeUser:object;
-  constructor(private _userSrv: UserService){
+  users: Observable<object>;
+  activeUser: object;
+  constructor(private userSrv: UserService) {
 
   }
 
-  ngOnInit(){
-    this.users=this._userSrv.getHttpUsers();
+  ngOnInit() {
+    this.users = this.userSrv.getHttpUsers();
   }
-  
 
-  setTitle(event){
+  setTitle(event) {
     this.title = event;
   }
-  printInBoard(message){
-    console.log(message)
-    this.messagesList.push(message)
+  printInBoard(message) {
+    console.log(message);
+    this.messagesList.push(message);
   }
 
-  selectUser(user:object){
-    this.activeUser=user;
-    console.log("Active user:"+this.activeUser);
+  selectUser(user: object) {
+    this.activeUser = user;
+    this.userSrv.saveActiveUser(user);
+    console.log('Active user:' + this.activeUser);
+  }
+  removeUser() {
+    this.activeUser = undefined;
+    this.userSrv.activeUser = undefined;
   }
 }

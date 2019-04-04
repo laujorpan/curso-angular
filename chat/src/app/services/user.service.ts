@@ -6,10 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  activeUser;
+  constructor(private http: HttpClient) { }
 
-  constructor(private _http: HttpClient) { }
-
-  getHttpUsers(): Observable<object>{
-    return this._http.get('https://randomuser.me/api/?results=5&seed=laura');
+  getHttpUsers(): Observable<object> {
+    return this.http.get('https://randomuser.me/api/?results=5&seed=laura');
+  }
+  saveActiveUser(user) {
+    this.activeUser = user;
   }
 }

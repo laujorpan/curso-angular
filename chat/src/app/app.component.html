@@ -2,7 +2,9 @@
 <div class="grid">
   <div class="grid-elem-1">
     <app-avatar (buttonClicked)= "setTitle($event)"></app-avatar>
-    <router-outlet></router-outlet>
+    <button routerLink="/contact" routerLinkActive="buttonActive">Contacts</button>
+    <button routerLink="/chat" routerLinkActive="buttonActive">Chat</button>
+    
   </div>
   <div class="grid-elem-2">
     <!--Option 1 fix users-->
@@ -12,11 +14,13 @@
     <app-avatar *ngFor="let user of (users | async)?.results" (click)="selectUser(user)" username="{{user.name.first}}" [userimage]="user.picture.medium"></app-avatar> 
   </div>
   <div class="grid-elem-3">
+      <router-outlet></router-outlet>
+      <app-notification></app-notification>
     <!-- Option 1 - With inputs and outputs -->
     <!--<app-board [messages] = "messagesList"></app-board>-->
     <!--Otra opcion: <app-board [message] ="lastMsg"></app-board>-->
     <!-- Option 2 - With services -->
-    <app-board [activeUser]="activeUser"></app-board>
+    <app-board [activeUser]="activeUser" (userRemoved)="removeUser()"></app-board>
   </div>
   <div class="grid-elem-4">
     <app-message (messageSent)="printInBoard($event)"></app-message>

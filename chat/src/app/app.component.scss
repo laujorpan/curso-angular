@@ -16,6 +16,9 @@ img.hover{
     .grid-elem-1{
         grid-area: header;
         background-color: lightgray;
+        display : grid;
+        grid-template-columns: 8fr 1fr 1fr;
+        grid-template-rows: 1fr;
     }
     .grid-elem-2{
         grid-area: users;
@@ -31,4 +34,8 @@ img.hover{
         flex: 1;
     }
     
+}
+.buttonActive{
+    background-color:cyan;
+    font-weight: bold;
 }

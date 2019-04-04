@@ -28,3 +28,11 @@ rangle.io --> creadores iniciales de augury
 augury: extension de chrome que permite ver el arbol de dependencias, atributos, etc
 Router:
 Cuidado con el orden en el que definimos las rutas ya que el primero que machea es el que pinta
+
+## Clase 5:
+Router: Victor Savkin
+Compodoc: https://github.com/compodoc/compodoc
+Posibles tareas:
+ [ ] Pasar a la vista de contacts los contactos
+ [ ] Pasar a la vista de chat el board
+ [ ] Pasar componentes a modulos y en el router cargar modulos en vez de components

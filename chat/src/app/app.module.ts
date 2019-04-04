@@ -2,7 +2,7 @@ import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router'
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
@@ -11,6 +11,7 @@ import { MessageComponent } from './components/message/message.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './contact/contact.component';
+import { NotificationComponent } from './components/commons/notification/notification.component';
 
 
 @NgModule({
@@ -20,13 +21,14 @@ import { ContactComponent } from './contact/contact.component';
     BoardComponent,
     MessageComponent,
     ChatComponent,
-    ContactComponent
+    ContactComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   providers: [],
   bootstrap: [AppComponent]
