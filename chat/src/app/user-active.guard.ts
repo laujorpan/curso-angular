@@ -18,7 +18,7 @@ export class UserActiveGuard implements CanActivate {
       console.log('active user: ' + isActive);
       this.notificationsSrv.sendError('No user selected to chat');
       if (!isActive) {
-        this.router.navigate(['contacts']);
+        this.router.navigate(['contact']);
       }
       return isActive;
   }

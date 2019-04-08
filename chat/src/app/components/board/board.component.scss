@@ -2,6 +2,12 @@
     display: grid;
     grid-template-rows: 74px 1fr;
     grid-template-columns: 95% 1fr;
+    grid-template-areas: 
+    'user close'
+    'board board'
+}
+.board{
+    grid-area: board;
 }
 p{
     text-align: left;
@@ -9,4 +15,10 @@ p{
     background: lightcyan;
     margin: 4px;
     border-radius: 4px;
+}
+app-avatar{
+    grid-area: user;
+}
+button{
+    grid-area: close
 }
