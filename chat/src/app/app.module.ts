@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AvatarComponent } from './components/avatar/avatar.component';
+import { AvatarComponent } from './components/commons/avatar/avatar.component';
 import { BoardComponent } from './components/board/board.component';
 import { MessageComponent } from './components/message/message.component';
 import { HttpClientModule } from '@angular/common/http';

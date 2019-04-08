@@ -10,26 +10,26 @@ img.hover{
     text-align: center;
     grid-template-areas: 
     'header header'
-    'users boarding'
-    'message message';
-   
+    'menu view'
+    ;
     .grid-elem-1{
         grid-area: header;
         background-color: lightgray;
         display : grid;
         grid-template-columns: 8fr 1fr 1fr;
         grid-template-rows: 1fr;
+        position: relative;
     }
     .grid-elem-2{
-        grid-area: users;
+        grid-area: menu;
         background-color: grey;
+        position: relative;
     }
     .grid-elem-3{
-        grid-area: boarding;
+        grid-area: view;
+        position: relative;
     }
-    .grid-elem-4{
-        grid-area: message;
-    }
+   
     app-board {
         flex: 1;
     }

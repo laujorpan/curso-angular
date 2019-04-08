@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { MessageService } from '../../services/message.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-board',
@@ -14,16 +15,17 @@ export class BoardComponent implements OnInit, OnDestroy {
   messages = [];
   @Input() activeUser: object;
   @Output() userRemoved = new EventEmitter();
+  subscription$:Subscription;
   constructor(private messageSrv: MessageService) { }
 
   ngOnInit() {
-    this.messageSrv.messages$.subscribe(data => {
+    this.subscription$=this.messageSrv.messages$.subscribe(data => {
       this.messages.push(data);
     });
   }
 
   ngOnDestroy() {
-    this.messageSrv.messages$.unsubscribe();
+    this.subscription$.unsubscribe();
   }
 
   getUser(user) {

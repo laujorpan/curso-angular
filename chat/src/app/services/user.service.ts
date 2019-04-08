@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  activeUser;
+  activeUser:object;
   constructor(private http: HttpClient) { }
 
   getHttpUsers(): Observable<object> {
