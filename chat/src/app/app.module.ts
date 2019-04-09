@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotificationComponent } from './components/commons/notification/notification.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { messageReducer } from './reducers/message.reducer';
 
 
 @NgModule({
@@ -28,7 +31,11 @@ import { NotificationComponent } from './components/commons/notification/notific
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    // StoreModule.forRoot(reducers, { metaReducers })
+    StoreModule.forRoot({
+      messages: messageReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

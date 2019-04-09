@@ -36,3 +36,12 @@ Posibles tareas:
  [ ] Pasar a la vista de contacts los contactos
  [ ] Pasar a la vista de chat el board
  [ ] Pasar componentes a modulos y en el router cargar modulos en vez de components
+
+## Clase 6
+Progressive web apps:
+https://angular.io/guide/service-worker-getting-started 
+https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=es
+Store:
+https://github.com/ngrx/platform
+https://ngrx.io/guide/store
+

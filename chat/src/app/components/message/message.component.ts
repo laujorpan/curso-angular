@@ -25,6 +25,7 @@ export class MessageComponent implements OnInit {
   /* Option 2: With a service */
   sendMessage(){
     this._messageSrv.addMessage(this.textWrote);
+    this.messageSent.emit(this.textWrote);
     this.textWrote='';
   }
 
