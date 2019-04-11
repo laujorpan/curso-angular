@@ -45,3 +45,13 @@ Store:
 https://github.com/ngrx/platform
 https://ngrx.io/guide/store
 
+## Clase 7 
+Repaso de ngrx: mantenemos en el store el usuario seleccionado ya que es relevante pra todas las vistas de la aplicación
+Router.navigate para que al seleccionar un contacto vaya directo a la vista de chat y que al pulsar cerrar vuelva
+Importante!!! Los servicios no tienen OnInit, OnDestroy...
+Limpiar codigo y meter material: https://material.angular.io/guide/getting-started
+Otra opcion de diseño: https://www.primefaces.org/primeng/#/
+
+EXTRA
+Para maquetar: 
+https://cssgridgarden.com/#es    http://www.flexboxdefense.com/  https://flexboxfroggy.com/#es

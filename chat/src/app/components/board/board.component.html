@@ -1,7 +1,6 @@
 <div class = "grid">
     <app-avatar *ngIf="activeUser" username="{{activeUser?.name?.first}}" [userimage]="activeUser?.picture?.medium"></app-avatar> 
     <button *ngIf="activeUser" (click)="removeActive()">X</button>
-    <!-- {{ getUser(activeUser) }} -->
     <div class="board">
     <p *ngFor="let msg of messages">{{ msg }}</p>
     </div>

@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html {
     font-family: "Comic Sans MS", "Times New Roman", Times, serif;
     font-size: 14px;
 }
 
-
+/*
 button{
     color: black;
     text-align: center;
@@ -16,3 +18,4 @@ button{
     border: none;
     background: lightblue;
 }
+*/

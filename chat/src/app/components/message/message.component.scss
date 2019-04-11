@@ -5,12 +5,17 @@
 input {
     flex: 1;
 }
-
+/*
 button {
     font-size: 21px;
 }
+*/
+
 /* Lo veremos mas adelante con los formularios activos
 .ng-invalid.ng-dirty {
     border-color: red
 }
 */
+.example-full-width {
+    width: 100%;
+  }

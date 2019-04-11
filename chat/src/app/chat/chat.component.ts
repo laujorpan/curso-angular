@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -8,15 +9,13 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  //messagesList: string[] = []; // Esto se usaba en la opcion 1 del board en la que recibia los mensajes como input
   activeUser: object;
 
-  constructor(private userSrv: UserService, private store: Store<string[]>) { }
+  constructor(private userSrv: UserService, private store: Store<string[]>, private router: Router) { }
   ngOnInit() {
     this.activeUser = this.userSrv.activeUser;
   }
   printInBoard(message) {
-    //this.messagesList.push(message);
     console.log(message);
     const action = {
       type: 'hello'
@@ -27,5 +26,6 @@ export class ChatComponent implements OnInit {
   removeUser() {
     this.activeUser = undefined;
     this.userSrv.activeUser = undefined;
+    this.router.navigate(['contact']);
   }
 }

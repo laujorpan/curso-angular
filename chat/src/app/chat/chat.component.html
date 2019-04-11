@@ -1,6 +1,2 @@
-<!-- Option 1 - With inputs and outputs -->
-    <!--<app-board [messages] = "messagesList"></app-board>-->
-    <!--Otra opcion: <app-board [message] ="lastMsg"></app-board>-->
-    <!-- Option 2 - With services -->
-    <app-board [activeUser]="activeUser" (userRemoved)="removeUser()" ></app-board>
-    <app-message (messageSent)="printInBoard($event)"></app-message>
+<app-board [activeUser]="activeUser" (userRemoved)="removeUser()" ></app-board>
+<app-message (messageSent)="printInBoard($event)"></app-message>

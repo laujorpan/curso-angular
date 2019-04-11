@@ -13,9 +13,12 @@ import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotificationComponent } from './components/commons/notification/notification.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+//import { reducers, metaReducers } from './reducers';
 import { messageReducer } from './reducers/message.reducer';
-
+import { usersReducer } from './reducers/users.reducer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -34,8 +37,12 @@ import { messageReducer } from './reducers/message.reducer';
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
     // StoreModule.forRoot(reducers, { metaReducers })
     StoreModule.forRoot({
-      messages: messageReducer
-    })
+      messages: messageReducer,
+      users: usersReducer
+    }),
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
