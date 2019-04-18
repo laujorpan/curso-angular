@@ -21,6 +21,13 @@ export class BoardComponent implements OnInit, OnDestroy {
     console.log('oninit board');
     this.store.select('messages').pipe(takeUntil(this.ngDestroy$)).subscribe((data) => {
       console.log(data);
+      if(data){
+        data.forEach(user => {
+          if(user['id'] === this.activeUser['login']['uuid']){
+            this.messages=user.messages
+          }
+        });
+      }
     });
   }
 

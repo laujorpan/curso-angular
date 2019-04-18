@@ -13,7 +13,6 @@ import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotificationComponent } from './components/commons/notification/notification.component';
 import { StoreModule } from '@ngrx/store';
-//import { reducers, metaReducers } from './reducers';
 import { messageReducer } from './reducers/message.reducer';
 import { usersReducer } from './reducers/users.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,7 +35,6 @@ import {MatButtonModule} from '@angular/material'
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
-    // StoreModule.forRoot(reducers, { metaReducers })
     StoreModule.forRoot({
       messages: messageReducer,
       users: usersReducer

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { MessageActions } from '../reducers/message.actions';
 
 @Component({
   selector: 'app-chat',
@@ -16,9 +17,11 @@ export class ChatComponent implements OnInit {
     this.activeUser = this.userSrv.activeUser;
   }
   printInBoard(message) {
-    console.log(message);
+    console.log("Message to board: "+message);
     const action = {
-      type: 'hello'
+      type: MessageActions.SAVE,
+      data: message,
+      userId: this.activeUser['login']['uuid']
     };
     console.log(`action dispatched ${action}`);
     this.store.dispatch(action);

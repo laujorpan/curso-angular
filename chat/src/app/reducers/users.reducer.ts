@@ -1,5 +1,3 @@
-import { State } from './index';
-import { Action } from '@ngrx/store';
 import { UserActions } from './users.actions';
 
 interface UserAction {
