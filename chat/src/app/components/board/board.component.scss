@@ -1,7 +1,7 @@
 .grid{
     display: grid;
     grid-template-rows: 74px 1fr;
-    grid-template-columns: 95% 1fr;
+    grid-template-columns: 1fr minmax(74px,10%);
     grid-template-areas: 
     'user close'
     'board board'

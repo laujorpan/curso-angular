@@ -1,2 +1,8 @@
-<input type="text" #inputMessage [(ngModel)]="textWrote" required/>
-<button (click)="sendMessage()" [disabled]="isDisabled()"> Send message </button>
+
+<mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Message" #inputMessage [(ngModel)]="textWrote"></textarea>
+</mat-form-field>
+
+<button mat-flat-button color="primary" (click)="sendMessage()" [disabled]="isDisabled()"><mat-icon>chat</mat-icon></button>
+<!--<input type="text" #inputMessage [(ngModel)]="textWrote" required/>
+<button (click)="sendMessage()" [disabled]="isDisabled()"> Send message </button>-->

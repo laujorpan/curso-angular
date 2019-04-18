@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angular/core';
-import { MessageService } from '../../services/message.service';
-import { Subscription } from 'rxjs';
+import {  Subject } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-board',
@@ -8,29 +9,32 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit, OnDestroy {
-  /* Option 1: With inputs and outputs */
-  /* @Input() messages:string[]; */
 
-  /* Option 2: With services */
   messages = [];
   @Input() activeUser: object;
   @Output() userRemoved = new EventEmitter();
-  subscription$:Subscription;
-  constructor(private messageSrv: MessageService) { }
+  ngDestroy$: Subject<object> = new Subject();
+
+  constructor(private store: Store<string[]>) { }
 
   ngOnInit() {
-    this.subscription$=this.messageSrv.messages$.subscribe(data => {
-      this.messages.push(data);
+    console.log('oninit board');
+    this.store.select('messages').pipe(takeUntil(this.ngDestroy$)).subscribe((data) => {
+      console.log(data);
+      if(data){
+        data.forEach(user => {
+          if(user['id'] === this.activeUser['login']['uuid']){
+            this.messages=user.messages
+          }
+        });
+      }
     });
   }
 
   ngOnDestroy() {
-    this.subscription$.unsubscribe();
+    this.ngDestroy$.next();
   }
 
-  getUser(user) {
-    // console.log(user);
-  }
   removeActive() {
     this.activeUser = undefined;
     this.userRemoved.emit();

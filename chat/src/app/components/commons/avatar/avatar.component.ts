@@ -7,24 +7,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AvatarComponent implements OnInit {
 
-  @Input('username') name:string = 'laujorpan';
-  @Input('userimage') image:string = `https://twivatar.glitch.me/${this.name}`
+  @Input() username = 'laujorpan';
+  @Input() userimage = `https://twivatar.glitch.me/${this.username}`;
   @Output() buttonClicked = new EventEmitter();
 
   constructor() {
-    console.log("Aquí solo tengo los valores default: "+this.name)
+    console.log('Aquí solo tengo los valores default: ' + this.username);
    }
 
   ngOnInit() {
-    console.log("Aquí ya angular ha autocargado el valor input recibido: "+this.name)
+    console.log('Aquí ya angular ha autocargado el valor input recibido: ' + this.username);
   }
 
-  findTwitterImg(){
-    return this.image;
-    //return `https://twivatar.glitch.me/${this.name}`;
+  findTwitterImg() {
+    return this.userimage;
   }
 
-  // handleClick(){
-  //   this.buttonClicked.emit(this.name);
-  // }
 }
