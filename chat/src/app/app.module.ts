@@ -18,7 +18,10 @@ import { usersReducer } from './reducers/users.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material'
+import {MatButtonModule} from '@angular/material';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import {MatButtonModule} from '@angular/material'
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
     StoreModule.forRoot({
       messages: messageReducer,

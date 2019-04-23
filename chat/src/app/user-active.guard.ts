@@ -16,7 +16,7 @@ export class UserActiveGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const isActive = this.userSrv.activeUser !== undefined;
       console.log('active user: ' + isActive);
-      this.notificationsSrv.sendError('No user selected to chat');
+      //this.notificationsSrv.sendError('No user selected to chat');
       if (!isActive) {
         this.router.navigate(['contact']);
       }

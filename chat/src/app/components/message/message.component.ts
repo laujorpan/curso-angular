@@ -23,14 +23,14 @@ export class MessageComponent implements OnInit {
   */
  
   /* Option 2: With a service */
-  sendMessage(){
-    console.log("Message: "+this.textWrote)
+  sendMessage() {
+    console.log('Message: ' + this.textWrote);
     this._messageSrv.addMessage(this.textWrote);
     this.messageSent.emit(this.textWrote);
-    this.textWrote='';
+    this.textWrote = '';
   }
   
-  isDisabled(){
-    return !this.textWrote || this.textWrote==='';
+  isDisabled() {
+    return !this.textWrote || this.textWrote === '';
   }
 }

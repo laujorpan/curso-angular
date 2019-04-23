@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { MessageActions } from '../reducers/message.actions';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-chat',
@@ -12,19 +13,28 @@ import { MessageActions } from '../reducers/message.actions';
 export class ChatComponent implements OnInit {
   activeUser: object;
 
-  constructor(private userSrv: UserService, private store: Store<string[]>, private router: Router) { }
+  constructor(private userSrv: UserService, private store: Store<string[]>, private router: Router, private db: AngularFirestore) { }
   ngOnInit() {
     this.activeUser = this.userSrv.activeUser;
   }
-  printInBoard(message) {
-    console.log("Message to board: "+message);
-    const action = {
-      type: MessageActions.SAVE,
-      data: message,
-      userId: this.activeUser['login']['uuid']
-    };
-    console.log(`action dispatched ${action}`);
-    this.store.dispatch(action);
+  printInBoard(text) {
+    if (this.activeUser['login']['uuid'] === 'general') {
+      const messageInfo = {
+        message : text,
+        username: 'Laura'
+      }
+      this.db.collection('messages').add(messageInfo);
+    } else {
+      console.log(`Message to board: ${text}`);
+      const action = {
+        type: MessageActions.SAVE,
+        data: text,
+        userId: this.activeUser['login']['uuid']
+      };
+      console.log(`action dispatched ${action}`);
+      this.store.dispatch(action);
+    }
+    
   }
   removeUser() {
     this.activeUser = undefined;

@@ -55,3 +55,6 @@ Otra opcion de diseño: https://www.primefaces.org/primeng/#/
 EXTRA
 Para maquetar: 
 https://cssgridgarden.com/#es    http://www.flexboxdefense.com/  https://flexboxfroggy.com/#es
+
+## Clase 8
+Firebase: https://github.com/angular/angularfire2
