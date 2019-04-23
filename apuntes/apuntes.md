@@ -52,9 +52,14 @@ Importante!!! Los servicios no tienen OnInit, OnDestroy...
 Limpiar codigo y meter material: https://material.angular.io/guide/getting-started
 Otra opcion de diseño: https://www.primefaces.org/primeng/#/
 
-EXTRA
-Para maquetar: 
+##### RESOURCES:
+Juegos para aprender a maquetar: 
 https://cssgridgarden.com/#es    http://www.flexboxdefense.com/  https://flexboxfroggy.com/#es
 
 ## Clase 8
 Firebase: https://github.com/angular/angularfire2
+¿Cómo podíamos tener una estructura adecuada de la aplicación?
+    [ ] Board y message deberían ser componentes "tontos" de presentación.
+    [ ] Chat debería gestionar la emisión/recepción a los componentes por inputs y outputs. 
+    [ ] Para que los datos se guarden y gestionen en la aplicación, chat debería pedir datos a un servicio y pintar los que ese servicio retorne, sin conocer si el servicio llama a un backend para sacar los datos, si los saca de un storage, si tira de Firebase...
+    [ ] El servicio debería conocer al store y a firebase (en este caso)
