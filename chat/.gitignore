@@ -49,3 +49,4 @@ curso.code-workspace
 documentation/
 ../curso.code-workspace
 src/environments/environment.dev.ts
+src/environments/environment.ts
