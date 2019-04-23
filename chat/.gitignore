@@ -46,3 +46,6 @@ testem.log
 Thumbs.db
 
 curso.code-workspace
+documentation/
+../curso.code-workspace
+src/environments/environment.dev.ts
