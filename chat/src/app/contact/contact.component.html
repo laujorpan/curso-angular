@@ -3,6 +3,8 @@
     
     <!--Option 2 send all needed values-->
     <!--<app-notification></app-notification> -->
-    <app-avatar   *ngFor="let user of (users$ | async)?.results" [class]="isActiveUser(user)?'active':'inactive'" (click)="selectUser(user)" username="{{user.name.first}}" [userimage]="user.picture.medium" ></app-avatar> 
+    <app-avatar (click)="selectUser(generalUser)" username="{{generalUser.name.first}}" [userimage]="generalUser.picture.medium" ></app-avatar> 
+
+    <app-avatar  *ngFor="let user of (users$ | async)?.results" (click)="selectUser(user)" username="{{user.name.first}}" [userimage]="user.picture.medium" ></app-avatar> 
     
  
