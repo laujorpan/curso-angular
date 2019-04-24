@@ -1,5 +1,5 @@
 <div class = "grid">
-    <app-avatar *ngIf="activeUser" username="{{activeUser?.name?.first}}" [userimage]="activeUser?.picture?.medium"></app-avatar> 
+    <app-avatar *ngIf="activeUser" username="{{activeUser?.name}}" [userimage]="activeUser?.image"></app-avatar> 
     <button mat-flat-button color="primary" *ngIf="activeUser" (click)="removeActive()"><mat-icon>home</mat-icon></button>
     <div class="board">
     <p *ngFor="let msg of messages">{{ msg }}</p>

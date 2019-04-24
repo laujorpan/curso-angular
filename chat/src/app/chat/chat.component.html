@@ -1,2 +1,2 @@
-<app-board [activeUser]="activeUser" (userRemoved)="removeUser()" ></app-board>
+<app-board [activeUser]="activeUser" (userRemoved)="removeUser()" [messages]="messages" ></app-board>
 <app-message (messageSent)="printInBoard($event)"></app-message>

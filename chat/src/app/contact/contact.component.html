@@ -2,9 +2,9 @@
     <!-- <app-avatar *ngFor="let username of users" (buttonClicked)= "setTitle($event)" username="{{username}}"></app-avatar> -->
     
     <!--Option 2 send all needed values-->
-    <!--<app-notification></app-notification> -->
+    <!--<app-notification></app-notification> 
     <app-avatar (click)="selectUser(generalUser)" username="{{generalUser.name.first}}" [userimage]="generalUser.picture.medium" ></app-avatar> 
-
-    <app-avatar  *ngFor="let user of (users$ | async)?.results" (click)="selectUser(user)" username="{{user.name.first}}" [userimage]="user.picture.medium" ></app-avatar> 
+-->
+    <app-avatar  *ngFor="let user of users" (click)="selectUser(user)" username="{{user.name}}" [userimage]="user.image" ></app-avatar> 
     
  

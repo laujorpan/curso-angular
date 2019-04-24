@@ -14,18 +14,9 @@ export class MessageComponent implements OnInit {
 
   ngOnInit() {
   }
-  /* Option 1: With inputs and outputs */
-  /*
-  sendMessage(){
-    this.messageSent.emit(this.textWrote);
-    this.textWrote='';
-  }
-  */
- 
-  /* Option 2: With a service */
+  
   sendMessage() {
     console.log('Message: ' + this.textWrote);
-    this._messageSrv.addMessage(this.textWrote);
     this.messageSent.emit(this.textWrote);
     this.textWrote = '';
   }
