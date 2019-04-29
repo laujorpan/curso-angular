@@ -8,8 +8,24 @@ import { MessageActions } from '../reducers/message.actions';
   providedIn: 'root'
 })
 export class MessageService {
-
-  constructor(private store: Store<string[]>,  private db: AngularFirestore) { }
+  //messages: string[] =[];
+  constructor(private store: Store<string[]>,  private db: AngularFirestore) { 
+    this.db.collection('messages').valueChanges().subscribe((data) => {
+      //this.messages= data.map(messageInfo => messageInfo['username'] + ": " + messageInfo['message']);
+      //console.log(this.messages);
+      let messages= data.map(
+        messageInfo =>{
+        let text=messageInfo['username'] + ": " + messageInfo['message']
+        const action = {
+          type: MessageActions.SAVE,
+          username: 'general',
+          message: text
+        };
+        console.log(`action dispatched ${action}`);
+        this.store.dispatch(action);
+      });
+    });
+  }
 
   saveMessageToUser(user:User, text:string){
     if (user.name === 'general') {
@@ -31,24 +47,14 @@ export class MessageService {
     }
   }
 
-  getMessages(activeUser:User): string[] {
-    let messages: string[] =[];
-    if(activeUser.name === 'general') {
-      this.db.collection('messages').valueChanges().subscribe((data) => {
-        console.log(data);
-        messages= data.map(messageInfo => messageInfo['username'] + ": " + messageInfo['message']);
-        console.log(messages);
-      });
-    }else{
-      this.store.select('messages').subscribe((data) => {
-        if (data) {
-          let userMessages=data.find((elem) => (elem.username === activeUser.name));
-          messages = userMessages?userMessages.messages:[];
-        }
-      });
-    }
-    console.log(messages);
-    return messages;
+  getMessages(activeUser:User): Observable<object[]>{ //string[] {
+    let messages;//=this.messages;
+    //if(activeUser.name !== 'general') {
+      
+    //}
+    return this.store.select('messages');// messages;
   }
+
+  
    
 }

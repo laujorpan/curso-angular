@@ -17,7 +17,13 @@ export class ChatComponent implements OnInit {
   constructor(private userSrv: UserService, private msgSrv: MessageService, private router: Router) { }
   ngOnInit() {
     this.activeUser = this.userSrv.activeUser;
-    this.messages=this.msgSrv.getMessages(this.activeUser);
+    this.msgSrv.getMessages(this.activeUser).subscribe((data) => {
+      if (data) {
+        let userMessages=data.find((elem) => (elem.username === this.activeUser.name));
+        this.messages= userMessages?userMessages.messages:[];
+      }
+    });
+    //console.log('Chat messages :'+this.messages)
   }
   printInBoard(text) {
     this.msgSrv.saveMessageToUser(this.activeUser,text);

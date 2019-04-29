@@ -8,6 +8,10 @@
 }
 .board{
     grid-area: board;
+    height: 80%;
+    float: left;
+    width: 1000px;
+    overflow: auto;
 }
 p{
     text-align: left;
