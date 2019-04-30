@@ -27,7 +27,7 @@ export class ChatComponent implements OnInit {
   }
   printInBoard(text) {
     this.msgSrv.saveMessageToUser(this.activeUser,text);
-    this.messages=this.msgSrv.getMessages(this.activeUser);
+    //this.messages=this.msgSrv.getMessages(this.activeUser);
   }
   removeUser() {
     this.activeUser = undefined;

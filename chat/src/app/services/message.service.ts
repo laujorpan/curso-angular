@@ -1,8 +1,10 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from '../model/user.model';
 import { MessageActions } from '../reducers/message.actions';
+import { MessageState } from '../reducers/message.reducer';
 
 @Injectable({
   providedIn: 'root'
@@ -47,12 +49,8 @@ export class MessageService {
     }
   }
 
-  getMessages(activeUser:User): Observable<object[]>{ //string[] {
-    let messages;//=this.messages;
-    //if(activeUser.name !== 'general') {
-      
-    //}
-    return this.store.select('messages');// messages;
+  getMessages(activeUser:User): Observable<MessageState[]>{ 
+    return this.store.select('messages');
   }
 
   

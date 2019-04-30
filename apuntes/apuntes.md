@@ -63,3 +63,10 @@ Firebase: https://github.com/angular/angularfire2
     [ ] Chat debería gestionar la emisión/recepción a los componentes por inputs y outputs. 
     [ ] Para que los datos se guarden y gestionen en la aplicación, chat debería pedir datos a un servicio y pintar los que ese servicio retorne, sin conocer si el servicio llama a un backend para sacar los datos, si los saca de un storage, si tira de Firebase...
     [ ] El servicio debería conocer al store y a firebase (en este caso)
+
+## Clase 9
+Formularios
+Para formularios reactivos tenemos https://www.learnrxjs.io/
+Importante:  importar ReactiveFormsModule (caso formularios reactivos, ver https://slides.com/jonroji/angular#/10/12 y siguientes)
+
+Tutoriales, posts y demás: https://blog.thoughtram.io/

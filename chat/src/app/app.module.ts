@@ -1,7 +1,7 @@
 import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -22,6 +22,7 @@ import {MatButtonModule} from '@angular/material';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { NewContactComponent } from './contact/new-contact/new-contact.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +32,14 @@ import { environment } from '../environments/environment';
     MessageComponent,
     ChatComponent,
     ContactComponent,
-    NotificationComponent
+    NotificationComponent,
+    NewContactComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),

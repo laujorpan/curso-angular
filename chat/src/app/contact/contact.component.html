@@ -6,5 +6,6 @@
     <app-avatar (click)="selectUser(generalUser)" username="{{generalUser.name.first}}" [userimage]="generalUser.picture.medium" ></app-avatar> 
 -->
     <app-avatar  *ngFor="let user of users" (click)="selectUser(user)" username="{{user.name}}" [userimage]="user.image" ></app-avatar> 
+    <app-avatar  (click)="createNew()" username="new" userimage="http://pngimg.com/uploads/plus/plus_PNG106.png" routerLink="newContact" ></app-avatar>
     
  

@@ -6,7 +6,7 @@ interface MessageAction{
   username: string,
   message: string
 }
-interface MessageState{
+export interface MessageState{
   username:string,
   messages:string[]
 }
