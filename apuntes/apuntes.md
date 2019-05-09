@@ -73,3 +73,7 @@ Tutoriales, posts y demás: https://blog.thoughtram.io/
 
 ## Clase 11
 Testing: https://angular.io/guide/testing
+    ### Other resources:
+    Performance
+    https://developer.mozilla.org/es/docs/Web/API/Performance/measure
+    
