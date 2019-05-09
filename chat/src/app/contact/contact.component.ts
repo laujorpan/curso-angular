@@ -23,7 +23,4 @@ export class ContactComponent implements OnInit {
     console.log('Active user:' + this.activeUser.key);
     this.router.navigate(['chat']);
   }
-  isActiveUser(user: object) {
-    return user === this.activeUser;
-  }
 }

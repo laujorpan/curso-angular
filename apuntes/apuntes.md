@@ -70,3 +70,6 @@ Para formularios reactivos tenemos https://www.learnrxjs.io/
 Importante:  importar ReactiveFormsModule (caso formularios reactivos, ver https://slides.com/jonroji/angular#/10/12 y siguientes)
 
 Tutoriales, posts y demás: https://blog.thoughtram.io/
+
+## Clase 11
+Testing: https://angular.io/guide/testing
